@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, ArrowRight, Loader2, Sparkles, Clock, Shield, Calendar, Users, Cpu, Rocket, Globe, Database } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { apiUrl } from '../utils/api';
 
 export default function DiscoveryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ export default function DiscoveryModal({ isOpen, onClose }) {
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/leads', {
+      const res = await fetch(apiUrl('/api/leads'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

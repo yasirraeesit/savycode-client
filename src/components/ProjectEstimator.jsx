@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, Sparkles } from 'lucide-react';
+import { apiUrl } from '../utils/api';
 
 export default function ProjectEstimator({ onOpenModal }) {
   const [projectType, setProjectType] = useState('ai');
@@ -68,7 +69,7 @@ export default function ProjectEstimator({ onOpenModal }) {
 
   const handleLockEstimate = async () => {
     try {
-      await fetch('/api/estimates', {
+      await fetch(apiUrl('/api/estimates'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

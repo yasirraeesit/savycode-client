@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, ArrowRight, Loader2, Sparkles, Terminal, GitBranch, Globe, Code2 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { apiUrl } from '../utils/api';
 
 export default function ApplyModal({ isOpen, onClose, defaultRole }) {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ export default function ApplyModal({ isOpen, onClose, defaultRole }) {
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/applications', {
+      const res = await fetch(apiUrl('/api/applications'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
