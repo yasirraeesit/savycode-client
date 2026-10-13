@@ -6,6 +6,7 @@ import LuxuryBuilderExplorer from '../components/LuxuryBuilderExplorer';
 import LuxuryJourney from '../components/LuxuryJourney';
 import LuxuryPeaceOfMind from '../components/LuxuryPeaceOfMind';
 import Testimonials from '../components/Testimonials';
+import PartnersMarquee from '../components/PartnersMarquee';
 import { ArrowRight, Sparkles, Shield, HeartHandshake, CheckCircle2 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -32,7 +33,10 @@ export default function HomePage({ onOpenModal }) {
       {/* 6. Client Outcomes & Social Proof */}
       <Testimonials />
 
-      {/* 7. Warm, Luxury Final CTA Banner */}
+      {/* 7. Strategic Partner Companies & Cloud Allies Slider */}
+      <PartnersMarquee />
+
+      {/* 8. Warm, Luxury Final CTA Banner */}
       <section className="py-24 relative ambient-glow-top">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="luxury-card rounded-3xl p-10 sm:p-16 shadow-2xl relative overflow-hidden">
